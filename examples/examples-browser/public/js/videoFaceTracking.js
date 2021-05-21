@@ -219,15 +219,22 @@ var app = angular.module('myApp', []);
     }
 
     function checkEmotion(){
-      if($scope.emotionsCount.angry === 2 || $scope.emotionsCount.sad === 10){
+      if($scope.emotionsCount.neutral===  29 )
+      {
         console.log("hello")
         $('#modal60').modal('open');
         $('#playPauseBtn').text('Play');
         $("#inputVideo").get(0).pause()
-
-
+        //$scope.emotionsCount.sad =0;
       }
-      
+      if( $scope.emotionsCount.neutral===  88)//niño
+      {
+        console.log("hello")
+        $('#modal60').modal('open');
+        $('#playPauseBtn').text('Play');
+        $("#inputVideo").get(0).pause()
+        //$scope.emotionsCount.sad =0;
+      }
     }
 
 
