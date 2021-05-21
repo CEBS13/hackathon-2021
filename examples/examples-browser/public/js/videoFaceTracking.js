@@ -219,7 +219,7 @@ var app = angular.module('myApp', []);
     }
 
     function checkEmotion(){
-      if($scope.emotionsCount.angry === 4){
+      if($scope.emotionsCount.neutral === 10){
         console.log("hello")
         $('#modal60').modal('open');
         $('#playPauseBtn').text('Play');

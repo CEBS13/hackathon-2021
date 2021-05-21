@@ -37,7 +37,8 @@
         <div class="row">
           <div class="col s6">
             <div style="position: relative" class="margin10">
-                <video crossorigin="anonymous" src="https://alms-sumadiinthespectrum-test.s3.amazonaws.com/test2.mp4" id="inputVideo" width="100%"  muted></video>
+              <video src="bbt.mp4" id="inputVideo" width="100%" muted></video>  
+             <!--  <video crossorigin="anonymous" src="https://alms-sumadiinthespectrum-test.s3.amazonaws.com/test2.mp4" id="inputVideo" width="100%"  muted></video>-->
                 <!-- https://www.w3schools.com/tags/movie.ogg -->
                 <canvas id="overlay"></canvas>
             </div>
@@ -94,13 +95,105 @@
         <!-- Modal Structure -->
 
           <!-- Modal Structure -->
+          <audio id="myAudio">
+            
+            <source src="musicoterapia.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
          <div id="modal60" class="modal">
           <div class="modal-content">
             <div class="row">
               <!-- face_detector_selection_control -->
               <div id="hello" class="col md5" style="margin-right: 20px;">
-                <h4>Lets pause for a moment and breath</h4>
-                <label>Select Face Detector</label>
+                <style>
+                  * {
+                    box-sizing: border-box;
+                  }
+                  
+                  body {
+                    margin: 0;
+                    font-family: Arial;
+                  }
+                  
+                  /* The grid: Four equal columns that floats next to each other */
+                  .column {
+                    float: left;
+                    width: 25%;
+                    padding: 10px;
+                  }
+                  
+                  /* Style the images inside the grid */
+                  .column img {
+                    opacity: 0.8; 
+                    cursor: pointer; 
+                  }
+                  
+                  .column img:hover {
+                    opacity: 1;
+                  }
+                  
+                  /* Clear floats after the columns */
+                  .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                  }
+                  
+                  /* The expanding image container */
+                  .container {
+                    position: relative;
+                    display: none;
+                  }
+                  
+                  /* Expanding image text */
+                  #imgtext {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 15px;
+                    color: white;
+                    font-size: 20px;
+                  }
+                  
+                  /* Closable button inside the expanded image */
+                  .closebtn {
+                    position: absolute;
+                    top: 10px;
+                    right: 15px;
+                    color: white;
+                    font-size: 35px;
+                    cursor: pointer;
+                  }
+                  </style>
+                  </head>
+                  <body>
+                  
+                  <div style="text-align:center">
+                    <h2>Tabbed Image Gallery</h2>
+                    <p>Click on the images below:</p>
+                  </div>
+                  
+                  <!-- The four columns -->
+                  <div class="row">
+                    <div class="column">
+                      <img src="https://e00-elmundo.uecdn.es/blogs/elmundo/applicate/imagenes_posts/2013/04/11/44446_540x360.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                      <img src="https://img.ibxk.com.br/2018/03/14/14174611138359.jpg" alt="Snow" style="width:100%"onclick="playAudio();">
+                    </div>
+                    <div class="column">
+                      <img src="img_mountains.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                      <img src="img_lights.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                  </div>
+                  
+                  <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg" style="width:100%">
+                    <div id="imgtext"></div>
+                  </div>
+                  
               </div>
             </div>
             </div>
@@ -236,5 +329,23 @@
       </div>
 
     </div>
+
+
+
+    <!--**********************************************************************************************************************-->
+
+    
+
   </body>
 </html>
+<script>
+  var x = document.getElementById("myAudio"); 
+  
+  function playAudio() { 
+    x.play(); 
+  } 
+  
+  function pauseAudio() { 
+    x.pause(); 
+  } 
+  </script>
